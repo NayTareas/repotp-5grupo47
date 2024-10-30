@@ -1,5 +1,5 @@
 package ar.edu.unju.escmi.tp5.main;
-//co
+//c
 
 import ar.edu.unju.escmi.tp5.collections.CollectionLibro;
 import ar.edu.unju.escmi.tp5.collections.CollectionUsuario;
@@ -27,7 +27,8 @@ public class Main {
             System.out.println("3 - Préstamo de libro");
             System.out.println("4 - Devolución de libro");
             System.out.println("5 - Listar libros");
-            System.out.println("6 - Salir");
+            System.out.println("6 - Listar préstamos"); // Nueva opción
+            System.out.println("7 - Salir");
             System.out.print("Seleccione una opción: ");
 
             int opcion = scanner.nextInt();
@@ -49,7 +50,11 @@ public class Main {
                 case 5:
                     listarLibros();
                     break;
+                
                 case 6:
+                    listarPrestamos(); // Llamar al nuevo método
+                    break;
+                case 7:
                     salir = true;
                     System.out.println("Saliendo del sistema...");
                     break;
@@ -140,5 +145,12 @@ public class Main {
             System.out.println(libro);
         }
 
+    }
+    // Método para listar préstamos
+    private static void listarPrestamos() {
+        System.out.println("Lista de préstamos realizados:");
+        for (Prestamo prestamo : CollectionPrestamo.obtenerPrestamos()) {
+            System.out.println(prestamo);
+        }
     }
 }
