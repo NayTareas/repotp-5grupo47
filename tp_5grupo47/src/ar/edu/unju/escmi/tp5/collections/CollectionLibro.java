@@ -24,4 +24,8 @@ public class CollectionLibro {
         }
         throw new LibroNoEncontradoException("Libro no encontrado: " + titulo);
     }
+    
+    public static List<Libro> obtenerTodosLosLibros() {
+        return libros;
+    }
 }
