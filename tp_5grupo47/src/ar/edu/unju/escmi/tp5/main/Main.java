@@ -1,4 +1,5 @@
 package ar.edu.unju.escmi.tp5.main;
+//co
 
 import ar.edu.unju.escmi.tp5.collections.CollectionLibro;
 import ar.edu.unju.escmi.tp5.collections.CollectionUsuario;
@@ -96,7 +97,7 @@ public class Main {
             Usuario usuario = CollectionUsuario.obtenerUsuario(nombreUsuario);
             System.out.println("Ingrese el título del libro: ");
             String tituloLibro = scanner.nextLine();
-            Libro libro = CollectionLibro.obtenerLibro(tituloLibro);
+            Libro libro = CollectionLibro.obtenerLibros(tituloLibro);
 
             if (!libro.isDisponible()) {
                 throw new LibroNoDisponibleException("El libro no está disponible para préstamo.");
@@ -117,7 +118,7 @@ public class Main {
         String tituloLibro = scanner.nextLine();
 
         try {
-            Libro libro = CollectionLibro.obtenerLibro(tituloLibro);
+            Libro libro = CollectionLibro.obtenerLibros(tituloLibro);
             if (libro.isDisponible()) {
                 System.out.println("El libro ya está disponible en la biblioteca.");
                 return;
@@ -135,8 +136,9 @@ public class Main {
 
     private static void listarLibros() {
         System.out.println("Lista de libros disponibles:");
-        for (Libro libro : CollectionLibro.obtenerLibros()) { // Usar un método de acceso
+        for (Libro libro : CollectionLibro.obtenerTodosLosLibros()) {
             System.out.println(libro);
         }
+
     }
 }
