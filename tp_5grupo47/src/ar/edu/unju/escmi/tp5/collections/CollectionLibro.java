@@ -15,7 +15,7 @@ public class CollectionLibro {
     }
 
     // obtener un libro por título
-    public static Libro obtenerLibro(String titulo) throws LibroNoEncontradoException {
+    public static Libro obtenerLibros(String titulo) throws LibroNoEncontradoException {
         for (Libro libro : libros) {
             if (libro.getTitulo().equalsIgnoreCase(titulo)) {
                 return libro;
@@ -23,5 +23,9 @@ public class CollectionLibro {
             
         }
         throw new LibroNoEncontradoException("Libro no encontrado: " + titulo);
+    }
+    
+    public static List<Libro> obtenerTodosLosLibros() {
+        return libros;
     }
 }
